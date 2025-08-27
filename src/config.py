@@ -1,4 +1,3 @@
-
 """Configuration settings for the Smart Data Cleaning System."""
 
 import os

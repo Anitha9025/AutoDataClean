@@ -1,3 +1,4 @@
+
 """Custom exceptions for the Smart Data Cleaning System."""
 
 from typing import Optional
@@ -35,4 +36,14 @@ class FileCorruptionError(FileHandlingError):
 
 class InsufficientMemoryError(DataCleaningError):
     """Exception raised when system doesn't have enough memory."""
+    pass
+
+
+class ProfilingError(DataCleaningError):
+    """Exception raised during data profiling operations."""
+    pass
+
+
+class DataQualityError(DataCleaningError):
+    """Exception raised during data quality assessment."""
     pass

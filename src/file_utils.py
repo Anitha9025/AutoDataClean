@@ -168,8 +168,8 @@ class FileHandler:
     def _get_excel_sheets(self, file_path: Path) -> List[str]:
         """Get list of sheet names from Excel file."""
         try:
-            with pd.ExcelFile(file_path) as xl_file:
-                return xl_file.sheet_names
+            xl_file = pd.ExcelFile(file_path)
+            return xl_file.sheet_names
         except Exception:
             return []
     

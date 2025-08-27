@@ -1,0 +1,1467 @@
+{
+  "dataset_info": {
+    "filename": "laptopData.csv",
+    "file_path": "E:\\statathoncode\\cleaningmodel\\data\\input\\laptopData.csv",
+    "total_rows": 1303,
+    "total_columns": 12,
+    "file_size_mb": 0.16680335998535156,
+    "memory_usage_mb": 0.7608575820922852,
+    "duplicate_rows": 29,
+    "duplicate_percentage": 2.225633154259401,
+    "overall_quality_score": 0.8250000000000001,
+    "column_names": [
+      "Unnamed: 0",
+      "Company",
+      "TypeName",
+      "Inches",
+      "ScreenResolution",
+      "Cpu",
+      "Ram",
+      "Memory",
+      "Gpu",
+      "OpSys",
+      "Weight",
+      "Price"
+    ],
+    "data_types_summary": {
+      "float": 2,
+      "text": 10
+    }
+  },
+  "column_profiles": {
+    "Unnamed: 0": {
+      "column_name": "Unnamed: 0",
+      "data_type": {
+        "primary_type": "numeric",
+        "confidence": 1.0,
+        "type_consistency": 0.8,
+        "mixed_types": [
+          "text"
+        ],
+        "all_scores": {
+          "numeric": 1.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.0,
+          "text": 0.5515161036920659
+        }
+      },
+      "pandas_dtype": "float64",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 1273,
+        "unique_percentage": 97.69762087490406,
+        "mean": 652.6747839748625,
+        "median": 652.0,
+        "std": 376.49302715628085,
+        "min": 0.0,
+        "max": 1302.0,
+        "q25": 327.0,
+        "q75": 980.0,
+        "skewness": -0.001071998503709697,
+        "kurtosis": -1.2030726717049285
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 1273,
+        "unique_percentage": 97.69762087490406,
+        "most_frequent_value": 0.0,
+        "most_frequent_count": 1,
+        "least_frequent_value": 1302.0,
+        "least_frequent_count": 1,
+        "top_values": {
+          "0.0": 1,
+          "868.0": 1,
+          "875.0": 1,
+          "874.0": 1,
+          "873.0": 1,
+          "872.0": 1,
+          "871.0": 1,
+          "870.0": 1,
+          "869.0": 1,
+          "867.0": 1
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 899,
+            "match_percentage": 89.9
+          }
+        }
+      },
+      "outlier_analysis": {
+        "iqr_method": {
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "lower_bound": -652.5,
+          "upper_bound": 1959.5
+        },
+        "zscore_method": {
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "threshold": 3.0
+        }
+      },
+      "quality_issues": [
+        "Mixed data types detected: ['text']"
+      ],
+      "quality_score": 0.8,
+      "recommended_actions": [
+        "Standardize data format"
+      ],
+      "numeric_analysis": {
+        "distribution_analysis": {
+          "skewness": -0.001071998503709697,
+          "kurtosis": -1.2030726717049285,
+          "skew_interpretation": "approximately_symmetric",
+          "kurtosis_interpretation": "platykurtic"
+        },
+        "range_analysis": {
+          "range": 1302.0,
+          "interquartile_range": 653.0,
+          "coefficient_of_variation": 0.5768462891478604,
+          "zero_count": 1,
+          "negative_count": 0,
+          "positive_count": 1272
+        },
+        "precision_analysis": {
+          "integer_count": 0,
+          "decimal_count": 1273,
+          "max_decimal_places": 1,
+          "avg_decimal_places": 1.0,
+          "is_integer_only": false
+        }
+      }
+    },
+    "Company": {
+      "column_name": "Company",
+      "data_type": {
+        "primary_type": "categorical",
+        "confidence": 0.9850746268656716,
+        "type_consistency": 1.0,
+        "mixed_types": [],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.9850746268656716,
+          "text": 0.05704634721131187
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 19,
+        "unique_percentage": 1.4581734458940905
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 19,
+        "unique_percentage": 1.4581734458940905,
+        "most_frequent_value": "Lenovo",
+        "most_frequent_count": 290,
+        "least_frequent_value": "Fujitsu",
+        "least_frequent_count": 2,
+        "top_values": {
+          "Lenovo": 290,
+          "Dell": 287,
+          "HP": 266,
+          "Asus": 156,
+          "Acer": 103,
+          "MSI": 53,
+          "Toshiba": 47,
+          "Apple": 21,
+          "Samsung": 9,
+          "Razer": 7
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {}
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [],
+      "quality_score": 1.0,
+      "recommended_actions": []
+    },
+    "TypeName": {
+      "column_name": "TypeName",
+      "data_type": {
+        "primary_type": "categorical",
+        "confidence": 0.99528672427337,
+        "type_consistency": 1.0,
+        "mixed_types": [],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.99528672427337,
+          "text": 0.09263157894736841
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 6,
+        "unique_percentage": 0.4604758250191865
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 6,
+        "unique_percentage": 0.4604758250191865,
+        "most_frequent_value": "Notebook",
+        "most_frequent_count": 710,
+        "least_frequent_value": "Netbook",
+        "least_frequent_count": 24,
+        "top_values": {
+          "Notebook": 710,
+          "Gaming": 203,
+          "Ultrabook": 191,
+          "2 in 1 Convertible": 116,
+          "Workstation": 29,
+          "Netbook": 24
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {}
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [],
+      "quality_score": 1.0,
+      "recommended_actions": []
+    },
+    "Inches": {
+      "column_name": "Inches",
+      "data_type": {
+        "primary_type": "numeric",
+        "confidence": 0.9992144540455616,
+        "type_consistency": 0.8,
+        "mixed_types": [
+          "categorical"
+        ],
+        "all_scores": {
+          "numeric": 0.9992144540455616,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.9795758051846033,
+          "text": 0.057172034564022
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 26,
+        "unique_percentage": 1.9953952417498082
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 26,
+        "unique_percentage": 1.9953952417498082,
+        "most_frequent_value": "15.6",
+        "most_frequent_count": 640,
+        "least_frequent_value": "25.6",
+        "least_frequent_count": 1,
+        "top_values": {
+          "15.6": 640,
+          "14": 191,
+          "17.3": 162,
+          "13.3": 161,
+          "12.5": 38,
+          "11.6": 31,
+          "12": 6,
+          "13.9": 6,
+          "13.5": 5,
+          "12.3": 5
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 1,
+            "match_percentage": 0.1
+          },
+          "postal_code": {
+            "match_count": 1,
+            "match_percentage": 0.1
+          }
+        }
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Mixed data types detected: ['categorical']"
+      ],
+      "quality_score": 0.8,
+      "recommended_actions": [
+        "Standardize data format"
+      ],
+      "numeric_analysis": {
+        "distribution_analysis": {
+          "skewness": 35.66405141512788,
+          "kurtosis": 1271.9496519146176,
+          "skew_interpretation": "right_skewed",
+          "kurtosis_interpretation": "leptokurtic"
+        },
+        "range_analysis": {
+          "range": 15689.9,
+          "interquartile_range": 1.5999999999999996,
+          "coefficient_of_variation": 16.01401735767873,
+          "zero_count": 0,
+          "negative_count": 0,
+          "positive_count": 1272
+        },
+        "precision_analysis": {
+          "integer_count": 0,
+          "decimal_count": 1272,
+          "max_decimal_places": 1,
+          "avg_decimal_places": 1.0,
+          "is_integer_only": false
+        }
+      }
+    },
+    "ScreenResolution": {
+      "column_name": "ScreenResolution",
+      "data_type": {
+        "primary_type": "categorical",
+        "confidence": 0.9685781618224666,
+        "type_consistency": 0.8,
+        "mixed_types": [
+          "text"
+        ],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.9685781618224666,
+          "text": 0.2265121759622938
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 40,
+        "unique_percentage": 3.069838833461243
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 40,
+        "unique_percentage": 3.069838833461243,
+        "most_frequent_value": "Full HD 1920x1080",
+        "most_frequent_count": 495,
+        "least_frequent_value": "IPS Panel Touchscreen 2400x1600",
+        "least_frequent_count": 1,
+        "top_values": {
+          "Full HD 1920x1080": 495,
+          "1366x768": 274,
+          "IPS Panel Full HD 1920x1080": 226,
+          "IPS Panel Full HD / Touchscreen 1920x1080": 52,
+          "Full HD / Touchscreen 1920x1080": 45,
+          "1600x900": 23,
+          "Touchscreen 1366x768": 16,
+          "Quad HD+ / Touchscreen 3200x1800": 14,
+          "IPS Panel 4K Ultra HD 3840x2160": 12,
+          "IPS Panel 4K Ultra HD / Touchscreen 3840x2160": 11
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 978,
+            "match_percentage": 97.8
+          }
+        }
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Mixed data types detected: ['text']"
+      ],
+      "quality_score": 0.8,
+      "recommended_actions": [
+        "Standardize data format"
+      ]
+    },
+    "Cpu": {
+      "column_name": "Cpu",
+      "data_type": {
+        "primary_type": "text",
+        "confidence": 0.36135113904163396,
+        "type_consistency": 1.0,
+        "mixed_types": [],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.0,
+          "text": 0.36135113904163396
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 118,
+        "unique_percentage": 9.056024558710668
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 118,
+        "unique_percentage": 9.056024558710668,
+        "most_frequent_value": "Intel Core i5 7200U 2.5GHz",
+        "most_frequent_count": 183,
+        "least_frequent_value": "AMD E-Series 9000e 1.5GHz",
+        "least_frequent_count": 1,
+        "top_values": {
+          "Intel Core i5 7200U 2.5GHz": 183,
+          "Intel Core i7 7700HQ 2.8GHz": 142,
+          "Intel Core i7 7500U 2.7GHz": 128,
+          "Intel Core i7 8550U 1.8GHz": 72,
+          "Intel Core i5 8250U 1.6GHz": 68,
+          "Intel Core i5 6200U 2.3GHz": 66,
+          "Intel Core i3 6006U 2GHz": 62,
+          "Intel Core i7 6500U 2.5GHz": 49,
+          "Intel Core i7 6700HQ 2.6GHz": 43,
+          "Intel Core i3 7100U 2.4GHz": 37
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 963,
+            "match_percentage": 96.3
+          }
+        }
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Low type consistency (confidence: 0.36)"
+      ],
+      "quality_score": 0.7,
+      "recommended_actions": [
+        "Consider data type conversion or cleaning"
+      ],
+      "text_analysis": {
+        "length_analysis": {
+          "min_length": 3,
+          "max_length": 37,
+          "avg_length": 26.316193399846508,
+          "std_length": 4.7447706131568825,
+          "empty_strings": 0,
+          "single_character": 0
+        },
+        "character_analysis": {
+          "contains_digits_pct": 97.0,
+          "contains_letters_pct": 100.0,
+          "contains_spaces_pct": 97.0,
+          "contains_special_chars_pct": 86.0
+        },
+        "language_analysis": {
+          "ascii_percentage": 100.0,
+          "likely_encoding": "ascii",
+          "sample_analyzed": 50
+        }
+      }
+    },
+    "Ram": {
+      "column_name": "Ram",
+      "data_type": {
+        "primary_type": "categorical",
+        "confidence": 0.9921445404556166,
+        "type_consistency": 1.0,
+        "mixed_types": [],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.9921445404556166,
+          "text": 0.039756480754124114
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 10,
+        "unique_percentage": 0.7674597083653107
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 10,
+        "unique_percentage": 0.7674597083653107,
+        "most_frequent_value": "8GB",
+        "most_frequent_count": 601,
+        "least_frequent_value": "1GB",
+        "least_frequent_count": 1,
+        "top_values": {
+          "8GB": 601,
+          "4GB": 367,
+          "16GB": 194,
+          "6GB": 40,
+          "12GB": 25,
+          "2GB": 22,
+          "32GB": 17,
+          "64GB": 3,
+          "24GB": 3,
+          "1GB": 1
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {}
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [],
+      "quality_score": 1.0,
+      "recommended_actions": []
+    },
+    "Memory": {
+      "column_name": "Memory",
+      "data_type": {
+        "primary_type": "categorical",
+        "confidence": 0.9685781618224666,
+        "type_consistency": 0.8,
+        "mixed_types": [
+          "text"
+        ],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.9685781618224666,
+          "text": 0.14065200314218382
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 40,
+        "unique_percentage": 3.069838833461243
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 40,
+        "unique_percentage": 3.069838833461243,
+        "most_frequent_value": "256GB SSD",
+        "most_frequent_count": 401,
+        "least_frequent_value": "256GB SSD +  1.0TB Hybrid",
+        "least_frequent_count": 1,
+        "top_values": {
+          "256GB SSD": 401,
+          "1TB HDD": 217,
+          "500GB HDD": 130,
+          "512GB SSD": 116,
+          "128GB SSD +  1TB HDD": 92,
+          "128GB SSD": 74,
+          "256GB SSD +  1TB HDD": 71,
+          "32GB Flash Storage": 37,
+          "2TB HDD": 16,
+          "64GB Flash Storage": 14
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 722,
+            "match_percentage": 72.2
+          }
+        }
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Mixed data types detected: ['text']"
+      ],
+      "quality_score": 0.8,
+      "recommended_actions": [
+        "Standardize data format"
+      ]
+    },
+    "Gpu": {
+      "column_name": "Gpu",
+      "data_type": {
+        "primary_type": "text",
+        "confidence": 0.2932207384131972,
+        "type_consistency": 1.0,
+        "mixed_types": [],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.0,
+          "text": 0.2932207384131972
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 110,
+        "unique_percentage": 8.44205679201842
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 110,
+        "unique_percentage": 8.44205679201842,
+        "most_frequent_value": "Intel HD Graphics 620",
+        "most_frequent_count": 271,
+        "least_frequent_value": "ARM Mali T860 MP4",
+        "least_frequent_count": 1,
+        "top_values": {
+          "Intel HD Graphics 620": 271,
+          "Intel HD Graphics 520": 181,
+          "Intel UHD Graphics 620": 66,
+          "Nvidia GeForce GTX 1050": 64,
+          "Nvidia GeForce GTX 1060": 48,
+          "Nvidia GeForce 940MX": 42,
+          "Intel HD Graphics 500": 39,
+          "AMD Radeon 530": 39,
+          "Intel HD Graphics 400": 34,
+          "Intel HD Graphics": 29
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 928,
+            "match_percentage": 92.80000000000001
+          }
+        }
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Low type consistency (confidence: 0.29)"
+      ],
+      "quality_score": 0.7,
+      "recommended_actions": [
+        "Consider data type conversion or cleaning"
+      ],
+      "text_analysis": {
+        "length_analysis": {
+          "min_length": 3,
+          "max_length": 30,
+          "avg_length": 20.273983115886416,
+          "std_length": 3.6313606759948414,
+          "empty_strings": 0,
+          "single_character": 0
+        },
+        "character_analysis": {
+          "contains_digits_pct": 95.0,
+          "contains_letters_pct": 100.0,
+          "contains_spaces_pct": 97.0,
+          "contains_special_chars_pct": 0.0
+        },
+        "language_analysis": {
+          "ascii_percentage": 100.0,
+          "likely_encoding": "ascii",
+          "sample_analyzed": 50
+        }
+      }
+    },
+    "OpSys": {
+      "column_name": "OpSys",
+      "data_type": {
+        "primary_type": "categorical",
+        "confidence": 0.992930086410055,
+        "type_consistency": 0.8,
+        "mixed_types": [
+          "text"
+        ],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.992930086410055,
+          "text": 0.10109976433621366
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 9,
+        "unique_percentage": 0.6907137375287797
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 9,
+        "unique_percentage": 0.6907137375287797,
+        "most_frequent_value": "Windows 10",
+        "most_frequent_count": 1047,
+        "least_frequent_value": "Android",
+        "least_frequent_count": 1,
+        "top_values": {
+          "Windows 10": 1047,
+          "No OS": 63,
+          "Linux": 61,
+          "Windows 7": 45,
+          "Chrome OS": 27,
+          "macOS": 13,
+          "Mac OS X": 8,
+          "Windows 10 S": 8,
+          "Android": 1
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {}
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Mixed data types detected: ['text']"
+      ],
+      "quality_score": 0.8,
+      "recommended_actions": [
+        "Standardize data format"
+      ]
+    },
+    "Weight": {
+      "column_name": "Weight",
+      "data_type": {
+        "primary_type": "text",
+        "confidence": 0.2029615082482325,
+        "type_consistency": 1.0,
+        "mixed_types": [],
+        "all_scores": {
+          "numeric": 0.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.0,
+          "text": 0.2029615082482325
+        }
+      },
+      "pandas_dtype": "object",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 189,
+        "unique_percentage": 14.504988488104376
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 189,
+        "unique_percentage": 14.504988488104376,
+        "most_frequent_value": "2.2kg",
+        "most_frequent_count": 111,
+        "least_frequent_value": "4.0kg",
+        "least_frequent_count": 1,
+        "top_values": {
+          "2.2kg": 111,
+          "2.1kg": 57,
+          "2.4kg": 43,
+          "2.3kg": 41,
+          "2.5kg": 37,
+          "2kg": 32,
+          "2.8kg": 27,
+          "1.2kg": 25,
+          "1.86kg": 23,
+          "1.4kg": 23
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 10,
+            "match_percentage": 1.0
+          }
+        }
+      },
+      "outlier_analysis": {
+        "method": "not_applicable",
+        "outlier_count": 0
+      },
+      "quality_issues": [
+        "Low type consistency (confidence: 0.20)"
+      ],
+      "quality_score": 0.7,
+      "recommended_actions": [
+        "Consider data type conversion or cleaning"
+      ],
+      "text_analysis": {
+        "length_analysis": {
+          "min_length": 1,
+          "max_length": 8,
+          "avg_length": 5.392939370683039,
+          "std_length": 0.7930259777525495,
+          "empty_strings": 0,
+          "single_character": 1
+        },
+        "character_analysis": {
+          "contains_digits_pct": 97.0,
+          "contains_letters_pct": 100.0,
+          "contains_spaces_pct": 0.0,
+          "contains_special_chars_pct": 92.0
+        },
+        "language_analysis": {
+          "ascii_percentage": 100.0,
+          "likely_encoding": "ascii",
+          "sample_analyzed": 50
+        }
+      }
+    },
+    "Price": {
+      "column_name": "Price",
+      "data_type": {
+        "primary_type": "numeric",
+        "confidence": 1.0,
+        "type_consistency": 0.8,
+        "mixed_types": [
+          "text"
+        ],
+        "all_scores": {
+          "numeric": 1.0,
+          "datetime": 0.0,
+          "boolean": 0.0,
+          "categorical": 0.0,
+          "text": 0.5825844461901022
+        }
+      },
+      "pandas_dtype": "float64",
+      "basic_stats": {
+        "count": 1303,
+        "non_null_count": 1273,
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "unique_count": 777,
+        "unique_percentage": 59.63161933998465,
+        "mean": 59955.81407321288,
+        "median": 52161.12,
+        "std": 37332.251004569844,
+        "min": 9270.72,
+        "max": 324954.72,
+        "q25": 31914.72,
+        "q75": 79333.3872,
+        "skewness": 1.5297811246017232,
+        "kurtosis": 4.416108379614302
+      },
+      "null_analysis": {
+        "null_count": 30,
+        "null_percentage": 2.3023791250959325,
+        "consecutive_nulls": {
+          "max_consecutive": 2,
+          "sequences": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sequence_count": 29
+        },
+        "null_pattern": "sparse_nulls"
+      },
+      "unique_analysis": {
+        "unique_count": 777,
+        "unique_percentage": 59.63161933998465,
+        "most_frequent_value": 79866.72,
+        "most_frequent_count": 14,
+        "least_frequent_value": 28992.312,
+        "least_frequent_count": 1,
+        "top_values": {
+          "79866.72": 14,
+          "95850.72": 14,
+          "58554.72": 14,
+          "69210.72": 11,
+          "63882.72": 11,
+          "26586.72": 11,
+          "47898.72": 10,
+          "53226.72": 10,
+          "74538.72": 9,
+          "71874.72": 9
+        }
+      },
+      "pattern_analysis": {
+        "patterns_found": {
+          "phone": {
+            "match_count": 978,
+            "match_percentage": 97.8
+          },
+          "postal_code": {
+            "match_count": 849,
+            "match_percentage": 84.89999999999999
+          }
+        }
+      },
+      "outlier_analysis": {
+        "iqr_method": {
+          "outlier_count": 28,
+          "outlier_percentage": 2.199528672427337,
+          "lower_bound": -39213.28079999999,
+          "upper_bound": 150461.38799999998
+        },
+        "zscore_method": {
+          "outlier_count": 12,
+          "outlier_percentage": 0.9426551453260016,
+          "threshold": 3.0
+        }
+      },
+      "quality_issues": [
+        "Mixed data types detected: ['text']"
+      ],
+      "quality_score": 0.8,
+      "recommended_actions": [
+        "Standardize data format"
+      ],
+      "numeric_analysis": {
+        "distribution_analysis": {
+          "skewness": 1.5297811246017232,
+          "kurtosis": 4.416108379614302,
+          "skew_interpretation": "right_skewed",
+          "kurtosis_interpretation": "leptokurtic"
+        },
+        "range_analysis": {
+          "range": 315684.0,
+          "interquartile_range": 47418.667199999996,
+          "coefficient_of_variation": 0.622662732241162,
+          "zero_count": 0,
+          "negative_count": 0,
+          "positive_count": 1273
+        },
+        "precision_analysis": {
+          "integer_count": 0,
+          "decimal_count": 1273,
+          "max_decimal_places": 4,
+          "avg_decimal_places": 2.1233307148468183,
+          "is_integer_only": false
+        }
+      }
+    }
+  },
+  "data_relationships": {
+    "correlation_analysis": {
+      "high_correlations": [],
+      "numeric_columns_analyzed": 2
+    },
+    "potential_keys": [
+      {
+        "column": "Unnamed: 0",
+        "uniqueness": 0.9769762087490407,
+        "unique_count": 1273
+      }
+    ],
+    "duplicate_columns": []
+  },
+  "data_quality_summary": {
+    "overall_score": 0.8250000000000001,
+    "quality_distribution": {
+      "excellent": 3,
+      "good": 9,
+      "fair": 0,
+      "poor": 0
+    },
+    "total_columns": 12,
+    "common_issues": {
+      "Mixed data types detected: ['text']": 5,
+      "Low type consistency": 3,
+      "Mixed data types detected: ['categorical']": 1
+    }
+  },
+  "profiling_metadata": {
+    "profiled_at": "2025-08-27T15:18:50.861546",
+    "profiler_version": "2.0.0",
+    "processing_method": "complete",
+    "sample_size": 12
+  }
+}

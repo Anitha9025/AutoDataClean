@@ -1,3 +1,4 @@
+
 """
 # Python
 __pycache__/
@@ -70,4 +71,5 @@ Thumbs.db
 # Testing
 .coverage
 .pytest_cache/
-htmlcov
+htmlcov/
+test_results/

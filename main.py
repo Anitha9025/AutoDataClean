@@ -1,6 +1,6 @@
 """
-Main entry point for Smart Data Cleaning System - Phase 1
-Demonstrates bulletproof file handling capabilities.
+Main entry point for Smart Data Cleaning System - Phase 2
+Enhanced with comprehensive data profiling capabilities.
 """
 
 import sys
@@ -12,7 +12,8 @@ from typing import Optional
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from src.file_utils import FileHandler, create_sample_processor
-from src.config import ensure_directories
+from src.profiling_module import DataProfiler
+from src.config import ensure_directories, OUTPUT_DIR
 from src.exceptions import DataCleaningError
 
 
@@ -40,14 +41,20 @@ def verify_setup() -> bool:
         # Test file handler initialization
         FileHandler()
         
+        # Test profiler initialization
+        DataProfiler()
+        
         # Check required modules
         import pandas as pd
         import numpy as np
         import psutil
         import tqdm
+        from scipy import stats
         
         print("✅ All dependencies available")
         print("✅ Directory structure created")
+        print("✅ File handler ready")
+        print("✅ Data profiler ready")
         print("✅ System ready")
         
         return True
@@ -62,9 +69,9 @@ def verify_setup() -> bool:
 
 
 def main():
-    """Main function demonstrating file handling capabilities."""
+    """Main function with Phase 2 profiling capabilities."""
     
-    print("🎯 Smart Data Cleaning System - Phase 1")
+    print("🎯 Smart Data Cleaning System - Phase 2")
     print("=" * 50)
     
     # Set up logging
@@ -76,40 +83,47 @@ def main():
         print("\n❌ Setup verification failed. Please fix the issues above.")
         return
     
-    # Initialize file handler
+    # Initialize handlers
     try:
         file_handler = FileHandler()
-        print("\n✅ File handler initialized successfully")
+        profiler = DataProfiler()
+        print("\n✅ All systems initialized successfully")
     except Exception as e:
-        print(f"\n❌ Failed to initialize file handler: {e}")
+        print(f"\n❌ Failed to initialize systems: {e}")
         return
     
-    # Interactive file selection
+    # Interactive menu
     while True:
         print("\n" + "=" * 50)
-        print("📋 OPTIONS:")
-        print("1. 📊 Analyze a file")
-        print("2. 🔄 Process file in chunks (demo)")
-        print("3. 🧪 Run system tests")
-        print("4. ℹ️  Show system info")
-        print("5. 🚪 Exit")
+        print("📋 SMART DATA CLEANING - PHASE 2 OPTIONS:")
+        print("1. 📊 Analyze file (Phase 1)")
+        print("2. 🔄 Process file in chunks (Phase 1 demo)")
+        print("3. 🎯 Generate comprehensive data profile (Phase 2)")
+        print("4. 📈 Profile and export to JSON (Phase 2)")
+        print("5. 🧪 Run system tests")
+        print("6. ℹ️  Show system info")
+        print("7. 🚪 Exit")
         
-        choice = input("\nEnter your choice (1-5): ").strip()
+        choice = input("\nEnter your choice (1-7): ").strip()
         
         if choice == '1':
             analyze_file(file_handler)
         elif choice == '2':
             process_file_demo(file_handler)
         elif choice == '3':
-            run_tests()
+            generate_data_profile(profiler)
         elif choice == '4':
-            show_system_info()
+            profile_and_export(profiler)
         elif choice == '5':
-            print("\n👋 Thanks for using Smart Data Cleaning System!")
-            print("Phase 1 complete - ready for Phase 2 development!")
+            run_tests()
+        elif choice == '6':
+            show_system_info()
+        elif choice == '7':
+            print("\n🎉 Thanks for using Smart Data Cleaning System!")
+            print("Phase 2 complete - comprehensive data profiling ready!")
             break
         else:
-            print("❌ Invalid choice. Please enter 1-5.")
+            print("❌ Invalid choice. Please enter 1-7.")
 
 
 def analyze_file(file_handler: FileHandler) -> None:
@@ -185,6 +199,137 @@ def analyze_file(file_handler: FileHandler) -> None:
         logging.error(f"Unexpected error in file analysis: {e}")
 
 
+def generate_data_profile(profiler: DataProfiler) -> None:
+    """Generate comprehensive data profile."""
+    
+    file_path = input("\n📁 Enter file path for data profiling: ").strip().strip('\"\'')
+    
+    if not file_path:
+        print("❌ No file path provided.")
+        return
+    
+    try:
+        print("\n🎯 Generating comprehensive data profile...")
+        print("This may take a moment for large datasets...")
+        
+        # Generate profile
+        profile = profiler.profile_dataset(file_path)
+        
+        # Display summary
+        summary = profiler.generate_profile_summary(profile)
+        print(summary)
+        
+        # Show detailed column analysis
+        print("\n📋 DETAILED COLUMN ANALYSIS:")
+        print("=" * 40)
+        
+        for col_name, col_profile in profile['column_profiles'].items():
+            if isinstance(col_profile, dict) and 'quality_score' in col_profile:
+                quality_score = col_profile['quality_score']
+                data_type = col_profile.get('data_type', {}).get('primary_type', 'unknown')
+                null_pct = col_profile.get('basic_stats', {}).get('null_percentage', 0)
+                
+                # Quality indicator
+                if quality_score >= 0.9:
+                    quality_icon = "✅"
+                elif quality_score >= 0.7:
+                    quality_icon = "✔️"
+                elif quality_score >= 0.5:
+                    quality_icon = "⚠️"
+                else:
+                    quality_icon = "❌"
+                
+                print(f"\n{quality_icon} {col_name}")
+                print(f"   Type: {data_type.title()}")
+                print(f"   Quality Score: {quality_score:.2f}")
+                print(f"   Null Values: {null_pct:.1f}%")
+                
+                # Show issues if any
+                issues = col_profile.get('quality_issues', [])
+                if issues:
+                    print(f"   Issues: {'; '.join(issues[:2])}")  # Show first 2 issues
+                
+                # Show recommendations
+                recommendations = col_profile.get('recommended_actions', [])
+                if recommendations:
+                    print(f"   💡 Recommendation: {recommendations[0]}")
+        
+        # Ask if user wants to save
+        save_choice = input("\n💾 Save profile to JSON file? (y/n): ").strip().lower()
+        if save_choice == 'y':
+            filename = Path(file_path).stem
+            export_path = OUTPUT_DIR / f"{filename}_profile.json"
+            profiler._export_profile(profile, export_path)
+            print(f"✅ Profile saved to: {export_path}")
+        
+    except DataCleaningError as e:
+        print(f"❌ Profiling error: {e}")
+        logging.error(f"Data profiling error: {e}")
+    except Exception as e:
+        print(f"💥 Unexpected error: {e}")
+        logging.error(f"Unexpected error in data profiling: {e}")
+
+
+def profile_and_export(profiler: DataProfiler) -> None:
+    """Profile dataset and export to JSON for RAG systems."""
+    
+    file_path = input("\n📁 Enter file path for profiling: ").strip().strip('\"\'')
+    
+    if not file_path:
+        print("❌ No file path provided.")
+        return
+    
+    # Get export preferences
+    filename = Path(file_path).stem
+    default_export = OUTPUT_DIR / f"{filename}_profile.json"
+    
+    export_input = input(f"\n💾 Export path (default: {default_export}): ").strip()
+    if not export_input:
+        export_path = default_export
+    else:
+        candidate = Path(export_input)
+        if candidate.is_dir():
+            export_path = candidate / f"{filename}_profile.json"
+        else:
+            export_path = candidate if candidate.suffix.lower() == '.json' else candidate.with_suffix('.json')
+    
+    # Ask about sampling for large files
+    sample_size = input("\n📊 Sample size for large files (leave empty for full): ").strip()
+    sample_size = int(sample_size) if sample_size.isdigit() else None
+    
+    try:
+        print("\n🎯 Generating comprehensive profile for RAG export...")
+        
+        # Profile with export
+        profile = profiler.profile_dataset(
+            file_path=file_path,
+            sample_size=sample_size,
+            export_path=export_path
+        )
+        
+        print(f"\n✅ PROFILING COMPLETED!")
+        print(f"📊 Dataset: {profile['dataset_info']['total_rows']:,} rows × {profile['dataset_info']['total_columns']} columns")
+        print(f"🎯 Quality Score: {profile['dataset_info']['overall_quality_score']:.2f}/1.00")
+        print(f"💾 Profile exported to: {export_path}")
+        
+        # Show JSON structure preview
+        print(f"\n📋 JSON STRUCTURE PREVIEW:")
+        print("├── dataset_info")
+        print("│   ├── filename, total_rows, total_columns, file_size_mb")
+        print("│   └── overall_quality_score")
+        print("├── column_profiles")
+        print("│   └── <column_name> → { data_type, basic_stats, quality_score, ... }")
+        print("├── data_quality_summary")
+        print("│   ├── overall_score")
+        print("│   └── quality_distribution, common_issues")
+        print("└── profiling_metadata")
+        
+    except DataCleaningError as e:
+        print(f"❌ Profiling/export error: {e}")
+        logging.error(f"Data profiling/export error: {e}")
+    except Exception as e:
+        print(f"💥 Unexpected error: {e}")
+        logging.error(f"Unexpected error in profiling/export: {e}")
 def process_file_demo(file_handler: FileHandler) -> None:
     """Demonstrate chunk processing capabilities."""
     
